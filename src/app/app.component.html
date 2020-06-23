@@ -1,0 +1,24 @@
+<!--
+<input type="number" [(ngModel)]="startIndex" (ngModelChange)="onChange()"> 
+<p>Start index: {{ startIndex }}</p>
+
+<input type="number" [(ngModel)]="endIndex" (ngModelChange)="onChange()"> 
+<p>End index: {{ endIndex }}</p>
+-->
+
+<form [formGroup]="indexForm" (ngSubmit)="onSubmit()">
+  <input type="number" placeholder="Start index" formControlName="indexStart" name="indexStart"/>
+  <input type="number" placeholder="End index" formControlName="indexEnd" name="indexEnd"/>
+  <input type="submit" value="Submit"/>
+</form>
+
+<table>
+  <tr>
+    <th>Slice</th>
+    <th>Splice</th>
+  </tr>
+  <tr>
+    <td><pre>{{ sliceData | json }}</pre></td>
+    <td><pre>{{ spliceData | json }}</pre></td>
+  </tr>
+</table>
